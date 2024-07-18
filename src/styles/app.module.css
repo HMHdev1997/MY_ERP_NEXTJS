@@ -1,0 +1,34 @@
+.myContainer {
+    width: 100% !important;
+    margin-left: 20px !important;
+    margin-right: 20px !important;
+
+    @media (min-width: 1400px) {
+        max-width: 100% !important;
+    }
+
+}
+
+.iconLarge {
+    color: #fdfdfd;
+    margin-right: 10px;
+    margin-left: 10px;
+    font-size: 2.3rem;
+}
+
+.textBrand {
+    font-size: 1.8rem;
+    color: #f0ede8;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+.input {
+    border: 1px solid #6c757d
+}
+
+.iconButton {
+    height: 25px;
+    width: 25px;
+}

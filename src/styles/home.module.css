@@ -1,0 +1,27 @@
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    /* Adjust the gap between grid items as needed */
+    padding: 16px;
+    /* Optional: Add padding around the grid */
+    margin-right: 20px;
+}
+
+.gridItem {
+    background-color: #f0f0f0;
+    padding: 10px 20px 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+.iconLarge {
+    align-items: center;
+    margin-right: 10px;
+    margin-left: 10px;
+    font-size: 2.8rem;
+}

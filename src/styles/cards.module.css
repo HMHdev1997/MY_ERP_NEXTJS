@@ -1,0 +1,15 @@
+.formCards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    /* Khoảng cách giữa các thẻ */
+    justify-content: start;
+    /* Căn giữa các thẻ */
+    margin-left: 20px;
+    margin-right: 35px;
+}
+
+.itemCards {
+    margin-top: 20px;
+    height: 350px;
+}

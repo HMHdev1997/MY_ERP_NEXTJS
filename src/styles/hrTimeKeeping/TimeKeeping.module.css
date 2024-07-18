@@ -1,0 +1,28 @@
+.container {
+    background-color: rgba(0, 0, 0, 0.125);
+    margin-top: 10px;
+    margin-right: 35px;
+    padding: 10px;
+}
+
+.contentHeader {
+    background-color: #e7ecf1;
+    margin-top: 10px;
+    margin-right: 35px;
+    padding: 10px;
+
+}
+
+.row {
+    padding: 5px 5px 5px 5px;
+}
+
+.text {
+    margin-top: 15px;
+    font-size: 1.8rem;
+    color: #110dcf;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    text-align: center;
+}
