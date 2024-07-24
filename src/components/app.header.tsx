@@ -4,7 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import x from '@/styles/app.module.css'
 import Link from 'next/link';
 import { FaHouse } from "react-icons/fa6";
-import { FaCog, FaUser, FaSignInAlt } from "react-icons/fa";
+import { FaCog, FaUser, FaSignInAlt, FaSignOutAlt } from "react-icons/fa";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
@@ -15,6 +15,15 @@ import LoginInModel from "../components/login/login.model";
 const AppHeader = () => {
 
     const [showModelLogin, setShowModelLogin] = useState<boolean>(false);
+    const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+
+    const handleLogout = () => {
+        setIsLoggedIn(false);
+    };
+
+    const handleLoginSuccess = () => {
+        setIsLoggedIn(true);
+    };
 
 
     return (
@@ -29,8 +38,19 @@ const AppHeader = () => {
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu className="dropdown-menu-end">
-                            <Dropdown.Item href="#/action-1"> <FaUser /> Tài khoản</Dropdown.Item>
-                            <Dropdown.Item onClick={() => setShowModelLogin(true)}>  Đăng nhập <FaSignInAlt /> </Dropdown.Item>
+                            {/* <Dropdown.Item href="#/action-1"> <FaUser /> Tài khoản</Dropdown.Item>
+                            <Dropdown.Item onClick={() => setShowModelLogin(true)}>  Đăng nhập <FaSignInAlt /> </Dropdown.Item> */}
+
+                            {isLoggedIn ? (
+                                <>
+                                    <Dropdown.Item href="#/action-1"> <FaUser /> Tài khoản</Dropdown.Item>
+                                    <Dropdown.Item onClick={handleLogout}> <FaSignOutAlt /> Đăng xuất  </Dropdown.Item>
+                                </>
+                            ) : (
+                                <>
+                                    <Dropdown.Item onClick={() => setShowModelLogin(true)}>  Đăng nhập <FaSignInAlt /> </Dropdown.Item>
+                                </>
+                            )}
 
                         </Dropdown.Menu>
                     </Dropdown>
@@ -39,7 +59,7 @@ const AppHeader = () => {
                 </Container>
 
             </Navbar>
-            <LoginInModel showModelLogin={showModelLogin} setShowModelLogin={setShowModelLogin} />
+            <LoginInModel showModelLogin={showModelLogin} setShowModelLogin={setShowModelLogin} onLoginSuccess={handleLoginSuccess} />
         </div>
     )
 }

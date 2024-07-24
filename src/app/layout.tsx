@@ -4,8 +4,10 @@ import AppHeader from "@/components/app.header";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { GoogleFonts } from 'next-google-fonts';
 import { Container } from "react-bootstrap";
-import x from '@/styles/app.module.css'
-import { NextRouter } from 'next/router'
+import x from '@/styles/app.module.css';
+import { NextRouter } from 'next/router';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,6 +28,18 @@ export default function RootLayout({
         <Container className={x['myContainer']}>
           {children}
         </Container>
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
       </body>
     </html>
   );
