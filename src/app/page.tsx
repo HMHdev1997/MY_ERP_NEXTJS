@@ -4,10 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaWarehouse, FaFileAlt, FaMoneyBill } from "react-icons/fa";
 import { FcFactory, FcPlanner, FcDocument, FcPaid, FcPrint, FcFlowChart, FcStatistics, FcTodoList, FcSettings } from "react-icons/fc";
 import { FaUsers } from "react-icons/fa6";
-import Carousel from 'react-bootstrap/Carousel';
 import Slide from '@/components/app.slide'
 import Cards from '@/components/app.cards'
-import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 export default function Home() {

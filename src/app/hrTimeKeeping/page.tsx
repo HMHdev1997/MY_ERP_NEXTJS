@@ -5,10 +5,10 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { TabContainer, TabContent, TabPane, Nav, Row, Col } from 'react-bootstrap';
 import x from '@/styles/hrTimeKeeping/TimeKeeping.module.css'
-import Statistical from '@/components/hrTimeKeeping/statistical/app.Statistical'
+import Statistical from '@/components/hrTimeKeeping/app.Statistical'
 
 const TimeKeeping = () => {
-    const router = useRouter();
+
 
     return (
         <div>

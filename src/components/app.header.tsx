@@ -7,17 +7,25 @@ import { FaHouse } from "react-icons/fa6";
 import { FaCog, FaUser, FaSignInAlt, FaSignOutAlt } from "react-icons/fa";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
-import { useState } from 'react';
-import LoginInModel from "../components/login/login.model";
+import useSWR, { Fetcher, mutate } from "swr";
 
+import { useState, useEffect } from 'react';
+import LoginInModel from "../components/login/login.model";
 
 const AppHeader = () => {
 
     const [showModelLogin, setShowModelLogin] = useState<boolean>(false);
     const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
 
+    useEffect(() => {
+        const token = localStorage.getItem('token');
+        if (token) {
+            setIsLoggedIn(true);
+        }
+    }, []);
+
     const handleLogout = () => {
+        localStorage.removeItem('token');
         setIsLoggedIn(false);
     };
 
@@ -38,12 +46,9 @@ const AppHeader = () => {
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu className="dropdown-menu-end">
-                            {/* <Dropdown.Item href="#/action-1"> <FaUser /> Tài khoản</Dropdown.Item>
-                            <Dropdown.Item onClick={() => setShowModelLogin(true)}>  Đăng nhập <FaSignInAlt /> </Dropdown.Item> */}
-
                             {isLoggedIn ? (
                                 <>
-                                    <Dropdown.Item href="#/action-1"> <FaUser /> Tài khoản</Dropdown.Item>
+                                    <Dropdown.Item as={Link} href="/hrEmployee"> <FaUser /> Tài khoản</Dropdown.Item>
                                     <Dropdown.Item onClick={handleLogout}> <FaSignOutAlt /> Đăng xuất  </Dropdown.Item>
                                 </>
                             ) : (
